@@ -190,13 +190,12 @@ Use the getAverageWordLength function below to do the following:
 */
 
 function getAverageWordLength(originalFlavors){
+    let averageWords = 0;
     for (i=0; i<originalFlavors.length; i++){
         let itemWords = originalFlavors[i].split(" ").length;
-        let averageWords = 0;
-        averageWords += itemWords;
-        const totalAverage = averageWords / itemWords;
-        return totalAverage;
+        averageWords += itemWords;             
     }
+    return averageWords / originalFlavors.length;
 }
 
 
