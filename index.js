@@ -86,11 +86,9 @@ Use the addFlavor function below to do the following:
 */
 
 const newFlavor = "Rainbow Sherbert";
-function addFlavor(newFlavor, originalFlavors){
-    originalFlavors = originalFlavors;
-    originalFlavors = originalFlavors.unshift(newFlavor);;
+function addFlavor(originalFlavors, newFlavor){
+    originalFlavors.unshift(newFlavor);
     return originalFlavors;
-    
 }
 
 
@@ -105,9 +103,9 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(newFlavorArray){
-   newFlavorArray = newFlavorArray.pop();
-   return newFlavorArray;
+function removeLastFlavor(originalFlavors){
+   originalFlavors.pop();
+   return originalFlavors;
 }
 
 
@@ -122,8 +120,8 @@ Use the getFlavorByIndex function below to do the following:
     For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-    /*your code here*/
+function getFlavorByIndex(originalFlavors, flavorIndex){
+    return originalFlavors[flavorIndex];
 }
 
 
@@ -141,8 +139,10 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-    /*your code here*/
+function removeFlavorByName(originalFlavors, flavorRemoved){
+    let flavorRemovedIndex = originalFlavors.indexOf(flavorRemoved);
+    originalFlavors.splice(flavorRemovedIndex, 1);
+    return originalFlavors;
 }
 
 
@@ -165,9 +165,15 @@ Use the filterByWord function below to do the following:
 
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
-
-function filterByWord(/*your code here*/){
-    /*your code here*/
+const chocolate = "Chocolate";
+function filterByWord(originalFlavors, chocolate){
+    let chocolateArray = [];
+    for (let i=0; i<originalFlavors.length; i++){
+        if (originalFlavors[i].includes(chocolate)){
+            chocolateArray.push(originalFlavors[i]);
+        }
+    }
+    return chocolateArray;
 }
 
 
